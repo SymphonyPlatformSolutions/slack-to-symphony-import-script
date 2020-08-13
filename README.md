@@ -17,7 +17,7 @@ $ python3 main_slack.py --auth "rsa" --config "PATH_TO_CONFIG_FILE"
 * Slack bot (app) needs to be in the channel that you wish to import over to Symphony
 * All channels that app is apart of will be imported into Symphony
 
-Slack Bot must be able to:
+#### Slack Bot must be able to:
 
 * View messages and other content in public channels that Conversation Manager has been added to
 * View messages and other content in private channels that Conversation Manager has been added to
