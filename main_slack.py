@@ -34,7 +34,7 @@ def main():
     # Initialize SymBotClient with auth and configure objects
     bot_client = SymBotClient(auth, configure)
     print('successfully authenticated')
-    slack_token = "xoxb-1176760234163-1161874769927-DeI0LsLlIfRKDynhm2Ewf358"
+    slack_token = "YOUR SLACK TOKEN HERE"
     room_obj = SlackRoom(slack_token).import_rooms(bot_client)
     print('successfully created rooms')
     slack_import = SlackImport(slack_token, room_obj).run_import(bot_client)
