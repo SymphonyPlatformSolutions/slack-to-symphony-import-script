@@ -38,6 +38,7 @@ def main():
     room_obj = SlackRoom(slack_token).import_rooms(bot_client)
     print('successfully created rooms')
     slack_import = SlackImport(slack_token, room_obj).run_import(bot_client)
+    print('successfully imported messages')
 
 if __name__ == "__main__":
     main()

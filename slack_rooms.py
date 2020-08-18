@@ -9,7 +9,7 @@ class SlackRoom():
 
     def __init__(self, slack_token):
         self.slack_token = slack_token
-        self.user_id_map = {"U015552PASZ" : 349026222344902, "U015CQTAX3N" : 349026222342182}
+        self.user_id_map = """{SLACK_USER_ID: SYMPHONY_USER_ID"""
         self.client = WebClient(token=self.slack_token)
 
     def get_rooms(self):
@@ -42,12 +42,10 @@ class SlackRoom():
         for i in range(0, len(rooms_array)):
             try:
                 stream_id = bot_client.get_stream_client().create_room(rooms_array[i].get('room')).get('roomSystemInfo').get('id')
-                print(stream_id)
             except APIClientErrorException as e:
                 if 'Please choose another name' in e.args[0]:
-                    rooms_array[i]['room'].update(name='{} iiiasdfww'.format(i))
+                    rooms_array[i]['room'].update(name='{} PUT DEFUALT NAME HERE'.format(i))
                     stream_id = bot_client.get_stream_client().create_room(rooms_array[i].get('room')).get('roomSystemInfo').get('id')
-                    print(stream_id)
             #return streamID and update conversation_id with returned streamID
             rooms_array[i].update(stream_id=stream_id)
         return rooms_array
